@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import CustomersDashboard from './customersList/CustomersDashboard';
+import CustomerDetails from './customersList/customerDetails';
+import FeedbackForm from './customersList/feedbackForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h3>Customer Feedback App</h3>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<CustomersDashboard />} />
+          <Route path='/userinput' element={<CustomerDetails />} />
+          <Route path='/feedback' element={<FeedbackForm />} />
+
+          <Route path='*' element={<Navigate to='/' />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <FeedbackForm /> */}
+
+      {/* <CustomersDashboard />
+      <CustomerDetails /> */}
     </div>
   );
 }

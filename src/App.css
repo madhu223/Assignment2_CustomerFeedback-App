@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  font-size: 18px;
+}
+#form-filed {
+  margin: 5px;
+  padding: 5px;
+}
+#input-field {
+  margin-left: 5px;
+  width: 20vw;
+  height: 20px;
+  font-size: 16px;
+}
